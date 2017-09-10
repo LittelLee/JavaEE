@@ -11,15 +11,14 @@ public class LoginBao extends BaseDao {
 	public Login checkLogin(String name,String password) {
 		try {
 			conn = datasource.getConnection();
-			String sql = "select * from Minfo where name='"+name+"' and id ='"+password+"'";
+			String sql = "select * from Minfo where name='"+name+"' and password ='"+password+"'";
 			PreparedStatement preparestatement = conn.prepareStatement(sql);
-			System.out.println(sql);
 			ResultSet result = preparestatement.executeQuery();
 			if(result.next()) {
 				Login login = new Login();
 				login.setId(result.getString("id"));
 				login.setName(result.getString("name"));
-				login.setPasswor(result.getString("password"));
+				login.setPasswords(result.getString("password"));
 				login.setRole(result.getBoolean("role"));
 				System.out.println(result.getString("name"));
 				

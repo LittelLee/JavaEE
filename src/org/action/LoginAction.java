@@ -6,15 +6,20 @@ import org.Dao.*;
 public class LoginAction extends ActionSupport {
 	private Login login;
 	public String execute()throws Exception{
-		System.out.println(login.getName()+" password = "+login.getId());
 		LoginBao logindao = new LoginBao();
-		Login I = logindao.checkLogin(login.getName(), login.getId());
+		Login I = logindao.checkLogin(login.getName(), login.getPasswords());
 		if(I!=null) {
 			Map session = ActionContext.getContext().getSession();
 			session.put("login", I);
 			return "Success";
 		}else {
 			return "Error";
+		}
+	}
+	public void validate(){
+		if(login.getName()=="" || login.getPasswords()=="") {
+			addFieldError("error", "账户或者密码不能为空");
+			System.out.println("Please input name or password");
 		}
 	}
 	public Login getLogin() {

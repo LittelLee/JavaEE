@@ -16,8 +16,14 @@
 				<td><s:textfield name="login.name" size="21" /></td>
 			</tr>
 			<tr>
-				<td>密&nbsp;&nbsp;码</td>
+				<td>人员号</td>
 				<td><s:textfield name="login.id" size="21"/></td>
+			</tr>
+			<tr>
+				<td>密&nbsp;&nbsp;码</td>
+				<td>
+					<input type="password" name="login.passwords" size="21" />
+				</td>
 			</tr>
 			<tr>
 				<td><s:submit value="登录" /></td>
