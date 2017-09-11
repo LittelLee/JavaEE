@@ -1,14 +1,14 @@
 package org.model;
 
 public class Login {
-	private String id;
+	private int id;
 	private String name;
 	private String passwords;
 	private Boolean role;
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -29,7 +29,7 @@ public class Login {
 	public void setRole(Boolean role) {
 		this.role = role;
 	}
-	public Login(String id, String name, String passwords, Boolean role) {
+	public Login(int id, String name, String passwords, Boolean role) {
 		super();
 		this.id = id;
 		this.name = name;

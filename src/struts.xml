@@ -4,11 +4,15 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="default"  extends="struts-default">
-		<action name="login"  class="org.action.LoginAction">
+		<action name="login"  class="org.action.LoginAction" >
             <result name="Success">main.jsp</result>
             <result name="Error">error.jsp</result>
             <result name="input">validateError.jsp</result>
         </action> 
+        <action name="register" class="org.action.LoginAction" method="register">
+        	<result name="Success">login.jsp</result>
+        	<result name="Error">error.jsp</result>
+        </action>
 	</package>
 	<constant name="struts.il8n.encoding" value="utf-8"></constant>
 </struts>
